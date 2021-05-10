@@ -8,4 +8,5 @@ function Button() {
     );
 }
 
+console.log(a);
 export default Button;
