@@ -1,63 +1,67 @@
 {
-  "name": "react-gulu",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/lib/index.js",
-  "types": "dist/lib/index",
-  "scripts": {
-    "start": "cross-env NODE_ENV=development  webpack-dev-server --config webpack.config.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
-    "lint": "npx eslint --ext .js,.ts,tsx ./lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DenghuaCN/react-gulu.git"
-  },
-  "husky": {
-    "hooks": {
-        "pre-commit": "yarn lint"
+    "name": "react-gulu",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/lib/index.js",
+    "types": "dist/lib/index",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development  webpack-dev-server --config webpack.config.dev.js",
+        "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+        "test": "cross-env NODE_ENV=test jest --config=jest.config.js -u --colors --coverage",
+        "lint": "npx eslint --ext .js,.jsx,.ts,.tsx lib/**",
+        "precommit": "lint-staged"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DenghuaCN/react-gulu.git"
+    },
+    "lint-staged": {
+        "lib/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+            "yarn lint",
+            "echo 'ESLint检测通过!'",
+            "yarn test --findRelatedTests",
+            "echo 'Jest单元测试通过！'"
+        ]
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DenghuaCN/react-gulu/issues"
+    },
+    "homepage": "https://github.com/DenghuaCN/react-gulu#readme",
+    "devDependencies": {
+        "@babel/preset-env": "^7.13.15",
+        "@babel/preset-react": "^7.13.13",
+        "@types/jest": "^26.0.22",
+        "@types/react": "^17.0.3",
+        "@types/react-dom": "^17.0.3",
+        "@types/react-test-renderer": "^17.0.1",
+        "@typescript-eslint/eslint-plugin": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.0",
+        "awesome-typescript-loader": "^5.2.1",
+        "babel-eslint": "^10.1.0",
+        "babel-jest": "^26.6.3",
+        "cross-env": "^7.0.3",
+        "eslint": "^7.24.0",
+        "eslint-config-alloy": "^4.1.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-react": "^7.23.2",
+        "html-webpack-plugin": "4.3.0",
+        "husky": "^6.0.0",
+        "jest": "^26.6.3",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.2.1",
+        "react-test-renderer": "16.8.4",
+        "ts-jest": "^26.5.4",
+        "typescript": "^4.2.4",
+        "webpack": "4.29.6",
+        "webpack-cli": "3.2.3",
+        "webpack-dev-server": "^3.11.2"
+    },
+    "dependencies": {
+        "react": "16.8.4",
+        "react-dom": "16.8.4"
     }
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DenghuaCN/react-gulu/issues"
-  },
-  "homepage": "https://github.com/DenghuaCN/react-gulu#readme",
-  "devDependencies": {
-    "@babel/preset-env": "^7.13.15",
-    "@babel/preset-react": "^7.13.13",
-    "@types/jest": "^26.0.22",
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
-    "@types/react-test-renderer": "^17.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.6.3",
-    "cross-env": "^7.0.3",
-    "eslint": "^7.24.0",
-    "eslint-config-alloy": "^4.1.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.23.2",
-    "html-webpack-plugin": "4.3.0",
-    "husky": "^6.0.0",
-    "jest": "^26.6.3",
-    "prettier": "^2.2.1",
-    "react-test-renderer": "16.8.4",
-    "ts-jest": "^26.5.4",
-    "typescript": "^4.2.4",
-    "webpack": "4.29.6",
-    "webpack-cli": "3.2.3",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "react": "16.8.4",
-    "react-dom": "16.8.4"
-  }
 }

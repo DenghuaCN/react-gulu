@@ -1,0 +1,8 @@
+#!/bin/sh
+#  yarn husky add .husky/pre-commit
+. "$(dirname "$0")/_/husky.sh"
+
+# yarn lint && yarn test -u
+
+# 仅在commit对暂存区做Lint和Jest测试
+yarn lint-staged
