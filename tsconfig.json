@@ -23,16 +23,14 @@
         "noUnusedLocals": true,
         "allowJs": true
     },
-    "include": [],
+    "include": [""],
     "exclude": [
-        "/node_modules",
-        "/build",
-        "/dist",
-        "/scripts",
-        "/acceptance-tests",
-        "/webpack",
-        "/jest",
-        "/test/setupTests.ts",
+        "node_modules",
+        "dist",
+        "scripts",
+        "acceptance-tests",
+        "jest",
+        "test/setupTests.ts",
         "*.js"
     ]
 }
