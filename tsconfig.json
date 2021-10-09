@@ -23,7 +23,7 @@
         "noUnusedLocals": true,
         "allowJs": true
     },
-    "include": ["lib"],
+    "include": [""],
     "exclude": [
         "node_modules",
         "dist",
